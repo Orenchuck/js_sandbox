@@ -62,7 +62,7 @@ function join () {
            for (var key in arg) {
              if (Array.isArray(result[key]) || result[key] === 'object'){
                var c = result[key];
-              if (isEmpty(c)){
+              if (isEmpty(c) || c.length == 0){
                 result[key] = arg[key];
                }
               else result[key] = result[key].concat(arg[key]);
@@ -70,7 +70,7 @@ function join () {
              else if (!isNaN(result[key]) || parseFloat(result[key]) || !isNaN(arg[key])){
               result[key] = +result[key] + (+arg[key]);
              }
-             else if (typeof(result[key]) == undefined) {
+             else if (typeof(result[key]) == "undefined" || typeof(result[key]) == "boolean") {
               result[key] = arg[key];
              }
              else  {
@@ -84,4 +84,3 @@ function join () {
   return result;
 }
 
-join(3, { name: 'K', k: [3], j: {} }, 'Hello', { n: 3, k: [4] }, { n: 7, name: 'ent', j: 13 });
