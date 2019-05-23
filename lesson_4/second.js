@@ -125,7 +125,7 @@ if (checkForm == '2') {
 
 return res
 }
-calculate ();
+
 
 
 
