@@ -9,11 +9,10 @@ function removeKeys (obj, arrStr) {
 }
 
 
-
 function clearNumbers (arr) {
   for (var i = 0; i<arr.length; i+=1) {
      for (var j = 0; j<arr[i].length; j+=1) {
-     if (isNaN (arr[i][j]) || !parseFloat(arr[i][j])) {
+     if (isNaN (arr[i][j]) || !typeof(arr[i][j]) == 'number' || (arr[i][j]) === null) {
       arr[i].splice(j, 1);
       j--;
     }
@@ -36,51 +35,42 @@ function reverse () {
 
 
 function join () {
-  var res = [];
-  for (var i=0; i<arguments.length; i+=1) {
-    if (typeof arguments[i]==='object') {
-      res[i]=arguments[i];
-    }
-    }
-    for (var n = 0; n<res.length; n+=1) {
-       if (res[n] == undefined) {
-       res.splice(n, 1);
-       n--;
-        }
-   }
+  let result = {};
+  let intVal = [];
+  let n = 0;
 
-   function isEmpty(obj) {
-    for (var keys in obj) {
-      return false;
+  for (let key of arguments) {
+    if (typeof key == 'object'){
+      intVal[n] = key;
+      n +=1;
     }
-    return true;
   }
-  
-    var result = res[0];
-    for (var j = 1; j < res.length; j+=1) {
-      var arg = res[j];
-           for (var key in arg) {
-             if (Array.isArray(result[key]) || result[key] === 'object'){
-               var c = result[key];
-              if (isEmpty(c) || c.length == 0){
-                result[key] = arg[key];
-               }
-              else result[key] = result[key].concat(arg[key]);
-             }
-             else if (!isNaN(result[key]) || parseFloat(result[key]) || !isNaN(arg[key])){
-              result[key] = +result[key] + (+arg[key]);
-             }
-             else if (typeof(result[key]) == "undefined" || typeof(result[key]) == "boolean") {
-              result[key] = arg[key];
-             }
-             else  {
-              result[key] = result[key] + arg[key];
-                   }
-     }
-          
-    }
 
+  result = intVal[0];
+
+  for (let i=1; i<intVal.length; i+=1){
+    for (let same in intVal[i]) {
+      if (same in result) {
+        if (Array.isArray(result[same])) {
+          for (let num of intVal[i][same]){
+            result[same].push(num);
+          }
+        }
+        else if (typeof result[same] == 'number' || typeof result[same] == 'string'){
+          result[same] += intVal[i][same];
+        }
+        else if (typeof result[same] != typeof intVal[i][same]){
+          result[same] = intVal[i][same];
+        }
+        
+      }
+      else {
+        result[same] = intVal[i][same];
+      }
+       
+    }
+   
+  }
 
   return result;
 }
-

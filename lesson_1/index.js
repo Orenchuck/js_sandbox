@@ -20,40 +20,26 @@ function add (a) {
 }
 
 
-
-
-function transformData (arr){
-var filt = [];
-    function getStat (arr, search) {
-        filt = arr.filter (function(item){
-            return search(item)
-        });
-        return filt
+function transformData (data) {
+    var result = {};
+    
+    for (var i=0; i<data.length; i+=1) {
+        if (data[i].mark>5) {
+            result[data[i].login] = (data[i].firstName + " " + data[i].lastName).trim() ;
+        }
     }
-
-getStat(proj, function(item){
-    return item.mark >= 5
-});
-
-var res = [];
-for (var i=0; i<filt.length; i+=1) {
-    var a = filt[i][login];
-    var b = filt[i][firstName].concat(filt[i][lastName]);
-    res.push ({a : b});
-};
-return res
+        return result;
 }
 
 
-
-function addInfinite(a) {
-    var sum = a;
-
-    function add2(b) {
-        sum += b;
-        return add2;
-    }
-
+function addInfinite (a) {
+    inner.result = a;
+    function inner (b){
+       inner.result += b;
+       return inner;
+   }
+  
+   return inner;
 }
 
 

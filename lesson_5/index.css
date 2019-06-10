@@ -1,0 +1,35 @@
+div {
+    display: none;
+    height: 150px;
+    width: 300px;
+    background: -webkit-radial-gradient(center, ellipse cover, lightblue 0%, blue 100%);
+    background: -moz-radial-gradient(center, ellipse cover, lightblue 0%, blue 100%);
+    position: absolute;
+    left: 35vw;
+
+}
+p {
+    color: white;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 30px;
+}
+img {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    left: 280px;
+}
+button {
+    position: relative;
+    z-index: 1;
+    color: black;
+    font-size: 135%;
+    font-weight: 700;
+    text-decoration: none;
+    padding: .25em .5em;
+    border-radius: 5px;
+    border: 2px solid #c61e40;
+    top: 20vh;
+    left: 40vw;
+}

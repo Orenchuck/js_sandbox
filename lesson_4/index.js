@@ -49,36 +49,38 @@ class FormBuilder {
 
 }
 
+
+
 function initBall () {
    let div = document.createElement('div');
-   document.body.append(div);
+   document.body.prepend(div);
    div.style.height = '20px';
    div.style.width = '20px';
    div.style.borderRadius = '10px';
    div.style.backgroundColor = 'blue';
 
-  function random () {
-       let x = Math.floor(Math.random() * document.documentElement.clientWidth);
-       let y = Math.floor(Math.random() * document.documentElement.clientHeight);
+    let x = Math.floor(Math.random() * (document.documentElement.clientWidth-20));
+    let y = Math.floor(Math.random() * (document.documentElement.clientHeight-20));
+    div.style.position = 'absolute';
+    div.style.top = `${x}px`;
+    div.style.left = `${y}px`;
+
+   
+   div.addEventListener('click', (event) => {
+       let x = Math.floor(Math.random() * (document.documentElement.clientWidth-20));
+       let y = Math.floor(Math.random() * (document.documentElement.clientHeight-20));
        div.style.position = 'absolute';
        div.style.top = `${x}px`;
        div.style.left = `${y}px`;
-   
-   }
-   random();
-   
-   div.addEventListener('click', random, false);
+       event.stopPropagation();
+   });
       
        
-   document.body.addEventListener('click', function rem(event) {
-             if (!div.is(e.target)){
-             document.body.removeChild('div');
-             div.removeEventListener('click', random1);
-           event.stopImmediatePropagation();
-       
-       
-       }
-   },false);
-   document.body.removeEventListener('click', rem);
+   window.addEventListener('click', function rem(event) {
+    document.body.removeChild(div);
+
+    this.removeEventListener('click', rem); 
+   });
 
 }
+

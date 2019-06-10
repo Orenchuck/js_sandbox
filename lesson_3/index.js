@@ -9,17 +9,17 @@ class Human {
 }
 
 class AlevelStudent extends Human {
-      constructor(name, age, mark){
+      constructor(name, age, marks){
           super(name, age);
-          this.mark = mark;
+          this.marks = marks;
     }
 
-    averageMark(mark) {
+    averageMark() {
         let res = 0;
-        for (let i=0; i<this.mark.length; i+=1){
-            res += this.mark[i]; 
+        for (let i=0; i<this.marks.length; i+=1){
+            res += this.marks[i]; 
         }
-        res = res/this.mark.length;
+        res = res/this.marks.length;
         return res;
           }
 }          
@@ -28,46 +28,55 @@ class AlevelStudent extends Human {
 
 
 class Calculator {
-    constructor (result = 0){
+    constructor (result = 0, hist){
         this.result = result;
+        this.hist = hist;
     }
     reset() {
         this.result = 0;
+        this.hist = 0;
         return this;
     }
 
     add (num) {
         this.result = num + this.result;
+        this.hist += ' + ' + num;
         return this;
     }
 
     sub (num) {
         this.result = this.result - num;
+        this.hist += ' - ' + num;
         return this;
     }
 
     mul (num) {
         this.result = this.result * num;
+        this.hist += ' * ' + num;
         return this;
     }
 
     div (num) {
         this.result = this.result / num;
+        this.hist += ' / ' + num;
         return this;
     }
 
     pow (num) {
         this.result = Math.pow (this.result, num);
+        this.hist += ' ^ ' + num;
         return this;
     }
 
     sqrt () {
         this.result = Math.sqrt (this.result);
+        //this.hist += ' √(';
         return this;
     }
 
     getResult () {
         let res = this.result;
+        this.hist += ' = ' + res;
         return res;
     }
 }
@@ -82,26 +91,7 @@ class Point {
     }
 
    toString (x, y) {
-    super.toString ();
-   
-    let Point = [];
-    let sum;
-    let res;
-    if (typeof this.x == 'number' || typeof this.y == 'number') {
-
-        this.x = String (this.x);
-        this.y = String (this.y);
-        sum = this.x + " " + this.y;
-    
-    Point.push(sum);
-    }
-    else {
-        sum = this.x + "" + this.y;
-        Point.push(sum);
-        
-    } 
-    res = 'Point[' + Point + ']';
-    return res;
+    return `Point[${this.x} ${this.y}]`;
    }
 
    set (x, y) {
@@ -121,18 +111,15 @@ class Point {
 
 class Line {
     constructor (point1, point2) {
-        point1 = new Point (this.x, this.y);
-        point2 = new Point (this.x, this.y);
         this.point1 = point1;
         this.point2 = point2;
        
     }
 
-    toString (point1, point2) {
-        super.toString ();
-       let first = this.point1.toString();
+    toString () {
+        let first = this.point1.toString();
         let second = this.point2.toString();
-        let Line = "Line ([" + first +']' + "-" + "[" + second + '])';
+        let Line = "Line(" + first + "-" + second + ')';
         return Line;
     }    
 
@@ -155,10 +142,7 @@ class WeightedPoint extends Point {
     }
 
     toString () {
-        super.toString();
-        let cur = this.toString(this.x, this.y);
-        let res = this.weight + "&" + cur;
-        return res;
+        return `${this.weight}&${super.toString()}`;;
     }
 
     set (x,y,weight) {
@@ -173,8 +157,7 @@ class WeightedPoint extends Point {
     }
 }
 
-
-class CalculatorExtended extends Calculator {
+/*class CalculatorExtended extends Calculator {
     toString () {
         super.toString ();
         let res;
@@ -226,4 +209,55 @@ function withUniqueID (parentClass) {
     }
     return someClass
 }
+*/
 
+class CalculatorExtended extends Calculator {
+    constructor (result, hist) {
+        super (result, hist);
+    }
+
+    toString() {
+        // let a = Calculator.hist;
+        // if (~a.indexOf('√')){
+        //     this.hist = '√(' + this.hist + ')'
+        // }
+        this.getResult();
+        return this.hist;
+    }
+}
+const calc = new CalculatorExtended();
+//console.log(calc.add(3).reset().sub(3).mul(2).div(3).pow(4).sqrt());
+//console.log(calc.toString()); // √(((0 - 3) * 2 / 3) ^ 4) = 4
+console.log(calc.reset().div(2).reset().mul(2).toString()); // 0 * 2 = 0
+console.log(calc.reset().div(2).mul(2).toString()); // 0 / 2 * 2 = 0
+console.log(calc.reset().sub(3).div(2).toString()); // (0 - 3) / 2 = -1.5
+console.log(calc.reset().sqrt().toString()); // √(0) = 0
+console.log(calc.reset().add(4).sqrt().toString()); // √(0 + 4) = 2
+console.log(calc.reset().add(4).mul(2).mul(2).toString()); // (0 + 4) * 2 * 2 = 16
+
+
+function withUniqueID(parentClass) {
+  
+    class NewClass extends parentClass {
+        constructor (id = 1) {
+           super();
+            this.id = id;
+  
+    };
+
+    };
+    function makeID(){
+        function count(){
+        return this.id +=1;
+    }
+    return count;
+    }
+    makeID(this.id);
+    
+    return NewClass;
+}
+/*class SomeClass { hello() {} }
+const SomeClassWithID = withUniqueID(SomeClass);
+console.log (new SomeClassWithID()); // { id: 1, hello() {} }
+console.log (new SomeClassWithID());// { id: 2, hello() {} }
+console.log (new SomeClassWithID()); // { id: 3, hello() {} }*/
