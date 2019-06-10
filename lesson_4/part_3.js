@@ -33,6 +33,7 @@ function func5 (arr, res = []) {
          else return a+b;
      }
  } 
+
   
 
 function func3 (stringValue) {
