@@ -70,7 +70,7 @@ class Calculator {
 
     sqrt () {
         this.result = Math.sqrt (this.result);
-        //this.hist += ' √(';
+        this.hist += ' √(';
         return this;
     }
 
@@ -157,59 +157,7 @@ class WeightedPoint extends Point {
     }
 }
 
-/*class CalculatorExtended extends Calculator {
-    toString () {
-        super.toString ();
-        let res;
-          function() {
-              if (this.add()) {
-                res = console.log (res + '+' + this.add(this.num));
-              } 
-              if (this.sub()) {
-                res = console.log (res + '-' + this.sub(this.num));
-              } 
-              if (this.mul()) {
-                res = console.log (res + '*' + this.mul(this.num));
-              } 
-              if (this.div()) {
-                res = console.log (res + '/' + this.div(this.num));
-    
-              }
-              if (this.sqrt()) {
-                res = console.log (res + '√' + this.sqrt());
-              }  
-              if (this.pow()) {
-                res = console.log (res + '^' + this.pow(this.num));
-              } 
-              if (this.reset()) {
-                res = console.log (res + '//');
-              } 
-              if (this.getResult()) {
-                res = console.log (res + '=' + this.getResult());
-              } 
-              return res;
-          }
-          return res;
-    }
-}
 
-
-function withUniqueID (parentClass) {
-    class someClass extends parentClass {
-        constructor () {
-            function makeID() {
-                let firstID = 1;
-              
-                return function() { 
-                  return firstID++;
-                };
-              }
-              
-        }
-    }
-    return someClass
-}
-*/
 
 class CalculatorExtended extends Calculator {
     constructor (result, hist) {
@@ -225,15 +173,6 @@ class CalculatorExtended extends Calculator {
         return this.hist;
     }
 }
-const calc = new CalculatorExtended();
-//console.log(calc.add(3).reset().sub(3).mul(2).div(3).pow(4).sqrt());
-//console.log(calc.toString()); // √(((0 - 3) * 2 / 3) ^ 4) = 4
-console.log(calc.reset().div(2).reset().mul(2).toString()); // 0 * 2 = 0
-console.log(calc.reset().div(2).mul(2).toString()); // 0 / 2 * 2 = 0
-console.log(calc.reset().sub(3).div(2).toString()); // (0 - 3) / 2 = -1.5
-console.log(calc.reset().sqrt().toString()); // √(0) = 0
-console.log(calc.reset().add(4).sqrt().toString()); // √(0 + 4) = 2
-console.log(calc.reset().add(4).mul(2).mul(2).toString()); // (0 + 4) * 2 * 2 = 16
 
 
 function withUniqueID(parentClass) {
@@ -256,8 +195,3 @@ function withUniqueID(parentClass) {
     
     return NewClass;
 }
-/*class SomeClass { hello() {} }
-const SomeClassWithID = withUniqueID(SomeClass);
-console.log (new SomeClassWithID()); // { id: 1, hello() {} }
-console.log (new SomeClassWithID());// { id: 2, hello() {} }
-console.log (new SomeClassWithID()); // { id: 3, hello() {} }*/
