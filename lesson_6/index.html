@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <input id="inp" type="text" value=""></input>
+        <button id="generate">Generate email</button>
+        <div id="random">
+            
+        </div>
+        <button id = "close">Close</button>
+        <div id="last">
+            <p>Check the format</p>
+            <input id = "inpCheck" value=""></input>
+            <button id="butCheck">Check</button>
+        </div>
+        <div id="last2">
+                <button id = "close2">Close</button>
+        </div>
+        <style type="text/css">
+        #last2 {
+            display: none;
+            position:absolute;
+            background: lightcoral;
+            top: 25vh;
+        }
+        #generate {
+            position: absolute;
+            top: 35vh;
+            left: 35vw;
+            background-color:aquamarine;
+            padding: 10px;
+            font-size: 2em;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 10px;
+            border: 1px solid blue;
+        }
+        #last {
+            position: absolute;
+            top: 15vh;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 2em;
+        }
+        #butCheck {
+            background-color:aquamarine;
+            padding: 10px;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 10px;
+            border: 1px solid blue;
+        }
+        #close {
+            display: none;
+            position: absolute;
+            background-color:aquamarine;
+            padding: 5px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 5px;
+            border: 1px solid blue;
+            top: 58vh;
+            left: 40vw;
+            z-index: 2;
+        }
+        
+        #random {
+            display: none;
+            position: absolute;
+            top: 45vh;
+            left: 30vw;
+            height: 100px;
+            width: 400px;
+            background: lightgreen;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 2em;
+            text-align: center;
+            }
+
+        </style>
+
+    <script src ="./index.js"></script>
+</body>
+</html>
