@@ -32,6 +32,7 @@ function transformData (data) {
 }
 
 
+
 function addInfinite (a) {
     inner.result = a;
     function inner (b){
