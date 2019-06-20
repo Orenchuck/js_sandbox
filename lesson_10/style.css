@@ -1,0 +1,99 @@
+html {
+    background: lightgrey;
+}
+button {
+    background: lightskyblue;
+    border-radius: 5px;
+    border: 1px solid lightseagreen;
+    font-size: 20px;
+    position: absolute;
+}
+
+.butt {
+    top: 30vh;
+}
+
+#now {
+    left: 15vw;
+}
+
+#history {
+    left: 55vw;
+}
+
+#convert {
+    top: 60vh;
+    left: 13vw;
+}
+
+#hist {
+    top: 60vh;
+    left: 55vw;
+}
+
+div {
+    position: absolute;
+    top: 35vh;
+    font-size: 20px;
+}
+
+#first {
+    left: 15vw;
+}
+
+#second {
+    left: 25vw;
+}
+
+input {
+    position: absolute;
+    top: 42vh;
+}
+
+#date1 {
+    left: 50vw;
+}
+
+#date2 {
+    left: 60vw;
+}
+
+#resDiv1 {
+    height: 200px;
+    width: 200px;
+    border: 2px solid blue;
+    font-size: 25px;
+    position: absolute;
+    top: 30vh;
+    left: 20vw;
+    z-index: 1;
+    background: white;
+    line-height: 1,5;
+    text-align: center;
+    padding-top: 35px;
+    padding-left: 10px;
+    display: hidden;
+}
+
+#close {
+    position: relative;
+    top: 70px;
+    left: -25px;
+}
+
+#resDiv2 {
+    min-height: 200px;
+    width: 400px;
+    border: 2px solid blue;
+    font-size: 25px;
+    position: absolute;
+    top: 30vh;
+    left: 20vw;
+    z-index: 1;
+    background: white;
+    line-height: 1,5;
+    text-align: center;
+    padding-top: 35px;
+    padding-left: 10px;
+    display: hidden;
+}
