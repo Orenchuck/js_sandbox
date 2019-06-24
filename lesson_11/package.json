@@ -1,0 +1,20 @@
+{
+  "name": "lesson_11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./index.html",
+    "build": "rm -rf dist && parcel build ./index.html --public-url /js_sandbox",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  },
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
