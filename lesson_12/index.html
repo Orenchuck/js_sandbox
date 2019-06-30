@@ -1,0 +1,43 @@
+
+<!doctype html>
+<html lang="en" data-framework="es6">
+	<head>
+		<meta charset="utf-8">
+		<title>Todo Hometask</title>
+		<link rel="stylesheet" href="./styles.css">
+	</head>
+	<body>
+		<section class="todoapp">
+			<header class="header">
+				<h1>todos</h1>
+				<input id="input" required="" class="new-todo" placeholder="What needs to be done?" autofocus>
+			</header>
+			<section style="display:none" class="main" id="mainSection">
+				<input id="toggle-all" class="toggle-all" type="checkbox">
+				<label for="toggle-all">Mark all as complete</label>
+				<ul id="todolist" class="todo-list"></ul>
+				<footer class="footer">
+					<span class="todo-count"></span>
+					<ul id='filtr' class="filters">
+						<li>
+							<a id='selAll' href="#/" class="selected">All</a>
+						</li>
+						<li>
+						<a id='act' href="#/active">Active</a>
+						</li>
+						<li>
+						<a id='compl' href="#/completed">Completed</a>
+						</li>
+					</ul>
+					<button id='clearCompl' class="clear-completed">Clear completed</button>
+				</footer>
+			</section>
+		</section>
+		<footer class="info">
+			<p>Double-click to edit a todo</p>
+			<input id="bin" type="checkbox">
+			<label>save at JSONBin</label>
+		</footer>
+<script src="./index.js"></script>
+	</body>
+</html>
