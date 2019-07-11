@@ -1,0 +1,181 @@
+html {
+    background: black;
+}
+#header {
+    color: white;
+    width: 59%;
+    height: 22.5%;
+    position: absolute;
+    top:30%;
+    left: 18%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 6vh;
+    line-height: 1;
+}
+
+#address {
+    position: absolute;
+    width: 60.3%;
+    height:6%;
+    left: 18%;
+    top: 52%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2vh;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+
+    color: #FCFCFC;
+}
+
+.login {
+    position: absolute;
+    left: 18%;
+    background: #FFFFFF;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.3vh;
+    line-height: 2vh;
+    color: #000000;
+    width: 62.7%;
+    height: 6.3%;
+    padding: 0 0 0 2.5vh;
+}
+
+#inputEmail {
+    top: 61%;
+}
+
+#inputPass {
+    top: 68%;
+}
+
+#forgotWrap {
+    position: absolute;
+    width: 66.7%;
+    height: 3.6%;
+    left: 18%;
+    top: 75.5%;
+
+    text-decoration: none;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2vh;
+    line-height: 2vh;
+    /* display: flex; */
+    /* align-items: center; */
+    text-align: right;
+
+    color: #FCFCFC;
+}
+
+#forgot {
+    text-decoration: none;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.9vh;
+    line-height: 1.9vh;
+    /* display: flex; */
+    /* align-items: center; */
+    text-align: right;
+
+    color: #FCFCFC;
+}
+
+#ok, #app {
+    position: absolute;
+    height: 6.3%;
+    width: 68%;
+    left: 17.3%;
+    bottom: 12.5%;
+
+    border: none;
+    background: #FF473A;
+    mix-blend-mode: normal;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.7vh;
+    line-height: 2.5vh;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+#registration {
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.9vh;
+    line-height: 1.9vh;
+   
+    color: #FCFCFC;
+    text-decoration: none;
+    position: absolute;
+    bottom: 9.5%;
+    left: 18%;
+}
+
+#wrong1, #wrong2 {
+    position: absolute;
+    width: 60%;
+    height: 2.2%;
+    left: 18%;
+    top: 58.5%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2vh;
+    line-height: 2vh;
+    color: #FF473A;
+}
+
+img {
+    /* height: 15%; */
+    width: 26.7%;
+    position: absolute;
+    top: 41.1%;
+    left: 36.5%;
+}
+
+#back {
+    position: absolute;
+    width: 60%;
+    height: 3%;
+    left: 19.7%;
+    top: 60.3%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.7vh;
+    line-height: 3vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FCFCFC;
+
+
+}
+
+@media (min-widht:1000px) {
+    #login, #ok, #forgotWrap{
+        width: 30vw;
+    }
+}
+
+
+
+
+
