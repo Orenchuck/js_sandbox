@@ -1,14 +1,8 @@
 {
-  "name": "module_2",
+  "name": "lesson_18",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "parcel": "^1.12.3",
-    "react-dom": "^16.8.6",
-    "react": "^16.8.6"
-  },
-  "devDependencies": {},
+  "main": "actions.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./index.html"
